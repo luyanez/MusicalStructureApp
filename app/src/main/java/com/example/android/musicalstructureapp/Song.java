@@ -1,7 +1,10 @@
 package com.example.android.musicalstructureapp;
 
 /**
- * Created by macbook on 6/10/18.
+ * Created by Lucero Yanez on 6/10/18.
+ * Song Class that help us to create the list of songs.
+ * Each song will contain name, artist, minutes, seconds and album.
+ * We define the setters and getters to easy our task to access the information.
  */
 
 public class Song {
@@ -12,13 +15,13 @@ public class Song {
     private String genres;
     private String album;
 
-    public Song(String name, String author, String minutes, String seconds, String genres, String album)
+    public Song(String name, String author, String minutes, String seconds, String album)
     {
         this.songName = name;
         this.songAuthor = author;
         this.minutes = minutes;
         this.seconds = seconds;
-        this.genres = genres;
+        //this.genres = genres;
         this.album = album;
     }
 
@@ -33,7 +36,7 @@ public class Song {
 
     public void setSeconds(String seconds) { this.seconds = seconds; }
 
-    public void setGenres(String genres){ this.genres = genres; }
+    //public void setGenres(String genres){ this.genres = genres; }
 
     public void setAlbum(String album) { this.album = album; }
 
@@ -51,7 +54,7 @@ public class Song {
 
     public String getSeconds() { return this.seconds; }
 
-    public String getGenres() { return this.genres; }
+    //public String getGenres() { return this.genres; }
 
     public String getAlbum() { return this.album; }
 }

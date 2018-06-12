@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,45 +8,46 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/heightBig"
         android:layout_weight="0">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Search"
-            android:gravity="center"
-            android:textSize="25sp"
             android:background="@color/colorPrimaryDark"
-            android:textColor="@android:color/white"/>
+            android:gravity="center"
+            android:text="@string/search_text"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textSizeBig" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/heightBig"
         android:layout_weight="0"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="25dp"
+            android:id="@+id/search_button"
+            android:layout_width="@dimen/_25dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/_8dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/search"/>
+            android:layout_marginTop="@dimen/_8dp"
+            android:src="@drawable/search" />
 
         <EditText
             android:id="@+id/name_text_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:maxLength="45"
-            android:hint="Search"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:hint="@string/search_text"
             android:inputType="textCapWords"
-            android:textSize="16sp" />
+            android:maxLength="45"
+            android:textSize="@dimen/textSizeBig" />
 
     </LinearLayout>
 
@@ -57,92 +57,99 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
-        <GridView
+        <ListView
             android:id="@+id/Music_list"
-            android:numColumns="2"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/heightBig"
         android:layout_weight="0"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+
 
         <LinearLayout
+            android:id="@+id/playlist_section"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/playlist_icon"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginRight="8dp"
-                android:src="@drawable/playlist"
-                android:layout_weight="1" />
+                android:layout_height="@dimen/_25dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:src="@drawable/playlist" />
 
-            <ImageView
-                android:id="@+id/music_icon"
+            <TextView
+                android:id="@+id/playlist_text"
                 android:layout_width="match_parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_height="25dp"
-                android:src="@drawable/music"
-                android:layout_weight="1" />
-
-            <ImageView
-                android:id="@+id/search_icon"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginRight="8dp"
-                android:src="@drawable/search_selected"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:gravity="center"
+                android:text="@string/playlist_text"
+                android:textSize="@dimen/textSizeSmall" />
 
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/music_section"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/playlist_text"
+            <ImageView
+                android:id="@+id/music_icon"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:gravity="center"
-                android:layout_marginStart="10dp"
-                android:text="Playlist"/>
+                android:layout_height="@dimen/_25dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:src="@drawable/music" />
+
             <TextView
                 android:id="@+id/music_text"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:layout_marginStart="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
                 android:gravity="center"
-                android:text="Music"/>
+                android:text="@string/music_text"
+                android:textSize="@dimen/textSizeSmall" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/search_section"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/search_icon"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:src="@drawable/search_selected" />
+
+
             <TextView
                 android:id="@+id/search_text"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:layout_marginStart="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
                 android:gravity="center"
+                android:text="@string/search_text"
                 android:textColor="@color/colorPrimaryDark"
-                android:text="Search"/>
+                android:textSize="@dimen/textSizeSmall" />
         </LinearLayout>
 
     </LinearLayout>

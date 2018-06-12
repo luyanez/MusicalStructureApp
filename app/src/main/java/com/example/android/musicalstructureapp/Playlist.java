@@ -3,7 +3,8 @@ package com.example.android.musicalstructureapp;
 import java.util.ArrayList;
 
 /**
- * Created by macbook on 6/10/18.
+ * Created by Lucero Yanez on 6/10/18.
+ * This Playlist class has the name and the songs of each Playlist.
  */
 
 public class Playlist {

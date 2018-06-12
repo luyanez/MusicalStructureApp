@@ -13,7 +13,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by macbook on 6/10/18.
+ * Created by Lucero Yanez on 6/10/18.
+ * Playlist Adapter that helps print the playlist object into the GridView.
+ * It contains one TextView and one ImageView.
  */
 
 public class PlayListAdapter extends ArrayAdapter<Playlist>{
@@ -36,20 +38,12 @@ public class PlayListAdapter extends ArrayAdapter<Playlist>{
         // Get the {@link AndroidFlavor} object located at this position in the list
         Playlist currentPlaylist = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID version_name
         TextView playlistName = (TextView) listItemView.findViewById(R.id.playlist_text_view);
-        // Get the version name from the current AndroidFlavor object and
-        // set this text on the name TextView
         playlistName.setText(currentPlaylist.getNamePlaylist());
 
-        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.playlist_image_view);
-        // Get the image resource ID from the current AndroidFlavor object and
-        // set the image to iconView
         iconView.setImageResource(R.drawable.playlist_icon);
 
-        // Return the whole list item layout (containing 2 TextViews and an ImageView)
-        // so that it can be shown in the ListView
         return listItemView;
     }
 }

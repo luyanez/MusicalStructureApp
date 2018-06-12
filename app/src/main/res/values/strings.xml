@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Musical Structure App</string>
+    <string name="playlist_text">Playlist</string>
+    <string name="music_text">Music</string>
+    <string name="search_text">Search</string>
+    <string name="create_new_playlist">Create New Playlist</string>
 </resources>

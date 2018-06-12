@@ -17,7 +17,9 @@ import com.example.android.musicalstructureapp.Song;
 import java.util.ArrayList;
 
 /**
- * Created by macbook on 6/10/18.
+ * Created by Lucero Yanez on 6/10/18.
+ * SongAdapter Class that will help us to print the information into the ListView.
+ * It contains 2 TextViews and 2 ImageViews.
  */
 
 public class SongAdapter extends ArrayAdapter<Song> {
@@ -36,7 +38,6 @@ public class SongAdapter extends ArrayAdapter<Song> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.song_view, parent, false);
         }
 
-        // Get the {@link AndroidFlavor} object located at this position in the list
         Song currentSong = getItem(position);
 
         String name = currentSong.getSongName();
